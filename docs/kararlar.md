@@ -1,0 +1,47 @@
+# ZulOS karar günlüğü
+
+Tarih: 7 Ekim 2026
+
+Bu belge, başlangıç görüşmelerinde kesinleşen kararları ve açık kalan konuları kaydeder. Bir önerinin burada açık konu olarak bulunması, uygulanmasına karar verildiği anlamına gelmez.
+
+## Kesinleşen kararlar
+
+| Konu | Karar | Anlamı |
+| --- | --- | --- |
+| İsim | ZulOS | Projenin adı. |
+| Geliştirme yaklaşımı | Sıfırdan işletim sistemi geliştirmek; temellerden başlamak | Kendi çekirdeğimizi geliştirerek ilerleyeceğiz. |
+| Ürün vizyonu | Kişisel asistan olarak çalışan AI destekli işletim sistemi | Kullanıcıyı tanıyan, ihtiyaçlarını sezen, uyum sağlayan ve hayatını kolaylaştıran bir deneyim hedefliyoruz. |
+| Hedef kitle | Herkes | Ürünün hedef kitlesi belirli bir meslek veya kullanıcı grubuyla sınırlandırılmadı. |
+| Hedef cihaz | Bilgisayar | Başlangıçta masaüstü ve dizüstü bilgisayarlar için geliştireceğiz. |
+| İlk işlemci mimarisi | x86_64 | İlk hedefimiz 64 bit Intel/AMD PC mimarisi. |
+| İlk geliştirme ve çalıştırma ortamı | QEMU | İlk çekirdeği emüle edilen bir bilgisayarda çalıştıracağız. |
+| İlk somut hedef | Açılan ve ekrana çıktı verebilen çekirdek | Kişisel asistan deneyiminin üzerine kurulacağı küçük bir temel oluşturacağız. |
+| Depo görünürlüğü | Public | Geliştirme ve öğrenme süreci GitHub'da herkese açık. |
+
+## Vizyonun netleştirilmesi
+
+Kullanıcının tarifi:
+
+> Kişisel asistan olarak çalışan bir işletim sistemi olarak düşünmek lazım. Sen leb demeden leblebiyi anlayacak. Seni tanıyacak ve uyum sağlayıp hayatını kolaylaştıracak.
+
+"Çalışmasını anlatan işletim sistemi" fikri ürünün ana yönü olarak benimsenmedi. İşletim sistemi geliştirmeyi öğrenmek bizim geliştirme sürecimizin bir parçası; ürünün merkezinde kişisel asistan deneyimi var.
+
+Bir bilgisayarı ve x86_64 + QEMU ortamını başlangıç hedefi olarak seçmek, hedef kitleyi değiştirmiyor. Geliştirmeye başlayacağımız teknik ortamı belirliyor.
+
+## Açık konular
+
+- Çekirdeğin programlama dili ve kullanılacak araçlar.
+- Önyükleme yöntemi ve hazır bir önyükleyici kullanıp kullanmayacağımız.
+- Çekirdek mimarisi ve sistem hizmetlerinin sınırları.
+- Fiziksel bilgisayarlarda ilk desteklenecek donanım ve sürücüler.
+- İlk kişisel asistan senaryosu ve nasıl değerlendirileceği.
+- AI'ın sistemle nasıl iletişim kuracağı ve hangi yetkilere sahip olacağı.
+- Kullanıcı hafızası, gizlilik, yerel model ve bulut modeli tercihleri.
+- Asistanın hangi işlerde kendiliğinden hareket edeceği, hangilerinde öneri sunacağı.
+- Lisans seçimi.
+
+Bu konuları sırayla ele alacağız. Mimari ve özellik önerileri [fikir havuzunda](fikirler-ve-ornekler.md) duruyor.
+
+## Mevcut durum
+
+Depoda başlangıç belgeleri var. Henüz çalışan çekirdek, açılabilir sistem imajı, AI hizmeti veya kurulum talimatı yok. QEMU'da veya fiziksel bilgisayarda bir çalışma doğrulaması henüz yapılmadı.
