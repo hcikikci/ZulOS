@@ -1,0 +1,23 @@
+# Generated build output
+/build/
+/out/
+/dist/
+/target/
+*.o
+*.obj
+*.elf
+*.iso
+*.img
+*.qcow2
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.local
+
+# Editor and operating system files
+.idea/
+.vs/
+Thumbs.db
+.DS_Store
