@@ -18,12 +18,15 @@ Onaylanan başlangıç hedefi **x86_64** mimarisi ve **QEMU** geliştirme ortam�
 
 Çekirdeğin ilk deneme dili **Rust** olarak seçildi. İlk geliştirme deneyimimizden sonra bu seçimi yeniden değerlendirebiliriz.
 
-Önyükleme yaklaşımı, geliştirme araçları ve çekirdek tasarımı henüz seçilmedi. Bunları nedenleri ve alternatifleriyle birlikte değerlendireceğiz. Fiziksel bilgisayarda çalışma, ayrıca donanım ve sürücü desteği gerektiren sonraki bir aşama.
+İlk açılış için **Limine** önyükleyicisini kullanacağız. [Önyükleme notları](docs/onyukleme.md), bu parçanın ne yaptığını ve ZulOS'un açılış zincirini açıklıyor.
+
+Firmware türü (UEFI/BIOS), Limine sürümü, protokol revizyonu, geliştirme araçları ve çekirdek tasarımı henüz seçilmedi. Bunları nedenleri ve alternatifleriyle birlikte değerlendireceğiz. Fiziksel bilgisayarda çalışma, ayrıca donanım ve sürücü desteği gerektiren sonraki bir aşama.
 
 ## Vizyon ve tasarım notları
 
 - [Kesinleşen kararlar ve açık konular](docs/kararlar.md)
 - [İşletim sistemi örnekleri ve fikir havuzu](docs/fikirler-ve-ornekler.md)
+- [Bootloader ve Limine nasıl çalışır?](docs/onyukleme.md)
 
 Bu belgeler 7 Ekim 2026 tarihine kadar yaptığımız görüşmelerin özetidir. Fikir havuzundaki özellikler tasarım önerileri; henüz çalışan özellikler veya kesinleşmiş geliştirme taahhütleri değil.
 
@@ -41,7 +44,7 @@ Kararlarımızı, deneylerimizi ve öğrendiklerimizi kodla birlikte bu depoda t
 
 Bu sıra bir başlangıç önerisi; teknik kararlar netleştikçe güncellenecek.
 
-1. **İlk açılış:** Önyükleme yaklaşımını ve araçları seçmek; Rust ile x86_64 hedefinde QEMU'da açılan, ekrana basit bir çıktı üreten ilk çekirdeği çalıştırmak.
+1. **İlk açılış:** Firmware türünü, sürümleri ve araçları seçmek; Limine ile başlatılan Rust çekirdeğini x86_64 hedefinde QEMU'da çalıştırmak ve ekrana basit bir çıktı vermek.
 2. **Donanımla iletişim:** Temel giriş/çıkış, kesmeler ve zamanlayıcıları öğrenmek.
 3. **Bellek:** Bellek yönetimini ve adres alanlarını kurmak.
 4. **Program çalıştırma:** Görevler, zamanlama, kullanıcı alanı ve sistem çağrıları üzerinde ilerlemek.

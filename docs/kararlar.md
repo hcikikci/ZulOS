@@ -16,6 +16,7 @@ Bu belge, başlangıç görüşmelerinde kesinleşen kararları ve açık kalan 
 | İlk işlemci mimarisi | x86_64 | İlk hedefimiz 64 bit Intel/AMD PC mimarisi. |
 | İlk geliştirme ve çalıştırma ortamı | QEMU | İlk çekirdeği emüle edilen bir bilgisayarda çalıştıracağız. |
 | Çekirdeğin ilk deneme dili | Rust | İlk denemeyi Rust ile yapacağız; geliştirme deneyimimize göre seçimi yeniden değerlendirebiliriz. |
+| İlk önyükleyici | Limine | Hazır önyükleyiciyle Rust çekirdeğini başlatacağız; Limine'ın nasıl çalıştığını da öğreneceğiz. |
 | İlk somut hedef | Açılan ve ekrana çıktı verebilen çekirdek | Kişisel asistan deneyiminin üzerine kurulacağı küçük bir temel oluşturacağız. |
 | Depo görünürlüğü | Public | Geliştirme ve öğrenme süreci GitHub'da herkese açık. |
 
@@ -33,7 +34,8 @@ Bir bilgisayarı ve x86_64 + QEMU ortamını başlangıç hedefi olarak seçmek,
 
 - Rust sürümü, derleme araçları ve geliştirme ortamının kurulumu.
 - İlk Rust denemesinden sonra dil seçiminin değerlendirilmesi.
-- Önyükleme yöntemi ve hazır bir önyükleyici kullanıp kullanmayacağımız.
+- İlk firmware türü (UEFI/BIOS), Limine sürümü ve protokol revizyonu.
+- Açılış, kurtarma ve güncelleme deneyimine hangi ZulOS özelliklerinin ekleneceği.
 - Çekirdek mimarisi ve sistem hizmetlerinin sınırları.
 - Fiziksel bilgisayarlarda ilk desteklenecek donanım ve sürücüler.
 - İlk kişisel asistan senaryosu ve nasıl değerlendirileceği.
@@ -43,6 +45,8 @@ Bir bilgisayarı ve x86_64 + QEMU ortamını başlangıç hedefi olarak seçmek,
 - Lisans seçimi.
 
 Bu konuları sırayla ele alacağız. Mimari ve özellik önerileri [fikir havuzunda](fikirler-ve-ornekler.md) duruyor.
+
+Limine'ın görevi ve açılışta geliştirebileceğimiz fikirler [önyükleme notlarında](onyukleme.md) açıklanıyor. Limine seçimi, bu fikirlerin uygulanmasına karar verildiği anlamına gelmiyor.
 
 ## Mevcut durum
 
