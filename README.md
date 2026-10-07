@@ -16,7 +16,9 @@ Proje başlangıç aşamasında. Henüz çalışan bir çekirdek veya açılabil
 
 Onaylanan başlangıç hedefi **x86_64** mimarisi ve **QEMU** geliştirme ortamı. İlk çekirdeği QEMU'da açıp ekrana çıktı verebilir hale getireceğiz.
 
-Programlama dili, önyükleme yaklaşımı ve çekirdek tasarımı henüz seçilmedi. Bunları nedenleri ve alternatifleriyle birlikte değerlendireceğiz. Fiziksel bilgisayarda çalışma, ayrıca donanım ve sürücü desteği gerektiren sonraki bir aşama.
+Çekirdeğin ilk deneme dili **Rust** olarak seçildi. İlk geliştirme deneyimimizden sonra bu seçimi yeniden değerlendirebiliriz.
+
+Önyükleme yaklaşımı, geliştirme araçları ve çekirdek tasarımı henüz seçilmedi. Bunları nedenleri ve alternatifleriyle birlikte değerlendireceğiz. Fiziksel bilgisayarda çalışma, ayrıca donanım ve sürücü desteği gerektiren sonraki bir aşama.
 
 ## Vizyon ve tasarım notları
 
@@ -39,7 +41,7 @@ Kararlarımızı, deneylerimizi ve öğrendiklerimizi kodla birlikte bu depoda t
 
 Bu sıra bir başlangıç önerisi; teknik kararlar netleştikçe güncellenecek.
 
-1. **İlk açılış:** Programlama dili ve önyükleme yaklaşımını seçmek; x86_64 hedefinde QEMU'da açılan, ekrana basit bir çıktı üreten ilk çekirdeği çalıştırmak.
+1. **İlk açılış:** Önyükleme yaklaşımını ve araçları seçmek; Rust ile x86_64 hedefinde QEMU'da açılan, ekrana basit bir çıktı üreten ilk çekirdeği çalıştırmak.
 2. **Donanımla iletişim:** Temel giriş/çıkış, kesmeler ve zamanlayıcıları öğrenmek.
 3. **Bellek:** Bellek yönetimini ve adres alanlarını kurmak.
 4. **Program çalıştırma:** Görevler, zamanlama, kullanıcı alanı ve sistem çağrıları üzerinde ilerlemek.

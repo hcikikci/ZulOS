@@ -15,6 +15,7 @@ Bu belge, başlangıç görüşmelerinde kesinleşen kararları ve açık kalan 
 | Hedef cihaz | Bilgisayar | Başlangıçta masaüstü ve dizüstü bilgisayarlar için geliştireceğiz. |
 | İlk işlemci mimarisi | x86_64 | İlk hedefimiz 64 bit Intel/AMD PC mimarisi. |
 | İlk geliştirme ve çalıştırma ortamı | QEMU | İlk çekirdeği emüle edilen bir bilgisayarda çalıştıracağız. |
+| Çekirdeğin ilk deneme dili | Rust | İlk denemeyi Rust ile yapacağız; geliştirme deneyimimize göre seçimi yeniden değerlendirebiliriz. |
 | İlk somut hedef | Açılan ve ekrana çıktı verebilen çekirdek | Kişisel asistan deneyiminin üzerine kurulacağı küçük bir temel oluşturacağız. |
 | Depo görünürlüğü | Public | Geliştirme ve öğrenme süreci GitHub'da herkese açık. |
 
@@ -30,7 +31,8 @@ Bir bilgisayarı ve x86_64 + QEMU ortamını başlangıç hedefi olarak seçmek,
 
 ## Açık konular
 
-- Çekirdeğin programlama dili ve kullanılacak araçlar.
+- Rust sürümü, derleme araçları ve geliştirme ortamının kurulumu.
+- İlk Rust denemesinden sonra dil seçiminin değerlendirilmesi.
 - Önyükleme yöntemi ve hazır bir önyükleyici kullanıp kullanmayacağımız.
 - Çekirdek mimarisi ve sistem hizmetlerinin sınırları.
 - Fiziksel bilgisayarlarda ilk desteklenecek donanım ve sürücüler.
