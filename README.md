@@ -22,7 +22,18 @@ Onaylanan başlangıç hedefi **x86_64** mimarisi ve **QEMU** geliştirme ortam�
 
 İlk açılış **UEFI** üzerinden olacak. QEMU'daki UEFI ortamını **OVMF** sağlayacak: QEMU → OVMF/UEFI → Limine → ZulOS Rust çekirdeği.
 
-Limine sürümü, protokol revizyonu, geliştirme araçları ve çekirdek tasarımı henüz seçilmedi. Bunları nedenleri ve alternatifleriyle birlikte değerlendireceğiz. Fiziksel bilgisayarda çalışma, ayrıca donanım ve sürücü desteği gerektiren sonraki bir aşama.
+Çekirdek mimarisi **mikroçekirdek** olarak seçildi. Çekirdeği küçük tutup sürücüler, dosya sistemi ve kişisel asistan gibi işlevleri kullanıcı alanındaki ayrı hizmetlerde geliştirmeyi hedefliyoruz. Ayrıntılı hizmet sınırları ve süreçler arası iletişim (IPC) tasarımı henüz seçilmedi.
+
+Limine sürümü, protokol revizyonu ve geliştirme araçları henüz seçilmedi. Bunları nedenleri ve alternatifleriyle birlikte değerlendireceğiz. Fiziksel bilgisayarda çalışma, ayrıca donanım ve sürücü desteği gerektiren sonraki bir aşama.
+
+## Mikroçekirdek yönü
+
+Başlangıç sorumluluk ayrımı taslağı:
+
+- **Çekirdek:** Görevlerin çalıştırılması, adres alanlarının korunması, temel kesme ve donanım erişim mekanizmaları, hizmetlerin iletişim kuracağı IPC altyapısı.
+- **Kullanıcı alanı:** Sürücü hizmetleri, dosya sistemi, ağ, masaüstü ve kişisel asistan.
+
+Bu ayrımın amacı hizmetleri birbirinden izole edebilmek. Bir hizmetin yeniden başlatılması, ona bağlı işlerin toparlanması ve erişim kuralları ayrıca tasarlanacak; mikroçekirdek seçimi tek başına bunları gerçekleştirmez.
 
 ## Vizyon ve tasarım notları
 
@@ -49,13 +60,15 @@ Bu sıra bir başlangıç önerisi; teknik kararlar netleştikçe güncellenecek
 1. **İlk açılış:** Sürümleri ve araçları seçmek; UEFI/OVMF ortamında Limine ile başlatılan Rust çekirdeğini x86_64 hedefinde QEMU'da çalıştırmak ve ekrana basit bir çıktı vermek.
 2. **Donanımla iletişim:** Temel giriş/çıkış, kesmeler ve zamanlayıcıları öğrenmek.
 3. **Bellek:** Bellek yönetimini ve adres alanlarını kurmak.
-4. **Program çalıştırma:** Görevler, zamanlama, kullanıcı alanı ve sistem çağrıları üzerinde ilerlemek.
-5. **Kullanılabilir temel:** Dosya sistemi, basit bir kabuk ve ihtiyaç duyulan sürücüleri geliştirmek.
+4. **Kullanıcı alanı ve iletişim:** Görevler, zamanlama, sistem çağrıları ve IPC üzerinde ilerlemek; ayrı adres alanlarında çalışan iki hizmetin mesaj alışverişini göstermek.
+5. **Kullanılabilir temel:** Dosya sistemi ve ihtiyaç duyulan sürücüleri kullanıcı alanındaki hizmetler olarak geliştirmek; basit bir kabuk eklemek.
 6. **Kişisel asistan deneyimi:** Temel sistem çalıştıktan sonra bağlamı anlama, kişiye uyum sağlama ve günlük işleri kolaylaştırma fikirlerini denemek. Erişim, gizlilik, hafıza ve kullanıcı kontrolü bu deneyimin tasarım konuları.
 
 ## İlk somut hedef
 
 QEMU'da x86_64 ZulOS çekirdeğini başlatmak ve ekrana ilk çıktısını vermek. Açılışın nasıl gerçekleştiğini öğrenmek ve sonucu tekrar üretebilmek istiyoruz.
+
+İlk açılış çıktısı bir başlangıç deneyi olacak. Mikroçekirdek ayrımını çalışan bir sistemde göstermek için daha sonra kullanıcı alanı izolasyonunu ve hizmetler arası iletişimi gerçekleştireceğiz.
 
 Kurulum ve çalıştırma talimatları, ilk çalışan örnekle birlikte eklenecek.
 

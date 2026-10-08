@@ -35,7 +35,7 @@ Limine protokolünde çekirdeğin içine istek yapıları yerleştirilir. Önyü
 
 x86_64 girişinde 64 bit çalışma ortamı, başlangıç sayfa tabloları ve stack hazırlanmıştır. Limine çekirdeğin giriş adresine geçer. Kesme altyapısını kurmak çekirdeğe kalır. [Limine protokolü](https://github.com/limine-bootloader/limine-protocol/blob/trunk/PROTOCOL.md)
 
-Bu devirden sonra çekirdeğimiz zamanla bellek yönetimi, görevler, kesmeler ve sürücüler gibi sorumlulukları üstlenecek. Sistem hizmetleri ve kişisel asistan bunların üzerine kurulacak. Bu, ZulOS için geliştirme yönümüz; bugün mevcut özellikler değil.
+Bu devirden sonra çekirdeğimiz zamanla görevler, bellek koruması, temel kesme mekanizmaları ve IPC gibi sorumlulukları üstlenecek. 8 Ekim 2026 tarihinde mikroçekirdek mimarisi seçildi; sürücüler ve dosya sistemi gibi işlevleri kullanıcı alanındaki ayrı hizmetlerde geliştirmeyi hedefliyoruz. Kişisel asistan da kullanıcı alanında çalışacak. Ayrıntılı hizmet sınırları açık; bunlar bugün mevcut özellikler değil.
 
 Limine günlük uygulama çalıştırmayı ve kişisel asistan davranışlarını yönetmez. İhtiyacı biten önyükleme belleğini geri kullanmayı çekirdekte doğru zamanda tasarlayacağız.
 

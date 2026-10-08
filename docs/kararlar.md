@@ -18,6 +18,7 @@ Bu belge, başlangıç görüşmelerinde kesinleşen kararları ve açık kalan 
 | Çekirdeğin ilk deneme dili | Rust | İlk denemeyi Rust ile yapacağız; geliştirme deneyimimize göre seçimi yeniden değerlendirebiliriz. |
 | İlk önyükleyici | Limine | Hazır önyükleyiciyle Rust çekirdeğini başlatacağız; Limine'ın nasıl çalıştığını da öğreneceğiz. |
 | İlk firmware türü | UEFI | 8 Ekim 2026 tarihinde ilk açılışın UEFI üzerinden yapılması onaylandı; QEMU'daki UEFI ortamını OVMF sağlayacak. |
+| Çekirdek mimarisi | Mikroçekirdek | 8 Ekim 2026 tarihinde seçildi. Küçük bir çekirdek ve kullanıcı alanında ayrı sistem hizmetleri hedefliyoruz; ayrıntılı hizmet sınırları ve IPC tasarımı açık. |
 | İlk somut hedef | Açılan ve ekrana çıktı verebilen çekirdek | Kişisel asistan deneyiminin üzerine kurulacağı küçük bir temel oluşturacağız. |
 | Depo görünürlüğü | Public | Geliştirme ve öğrenme süreci GitHub'da herkese açık. |
 
@@ -37,7 +38,9 @@ Bir bilgisayarı ve x86_64 + QEMU ortamını başlangıç hedefi olarak seçmek,
 - İlk Rust denemesinden sonra dil seçiminin değerlendirilmesi.
 - Limine sürümü, protokol revizyonu ve kullanılacak OVMF paketi/sürümü.
 - Açılış, kurtarma ve güncelleme deneyimine hangi ZulOS özelliklerinin ekleneceği.
-- Çekirdek mimarisi ve sistem hizmetlerinin sınırları.
+- Mikroçekirdeğin ayrıntılı sorumlulukları ve sistem hizmetlerinin sınırları.
+- Süreçler arası iletişim (IPC), hizmetlere erişim ve mesajların işlenme modeli.
+- İlk kullanıcı alanı hizmetinin başlatılması ve hizmet hatalarından toparlanma yaklaşımı.
 - Fiziksel bilgisayarlarda ilk desteklenecek donanım ve sürücüler.
 - İlk kişisel asistan senaryosu ve nasıl değerlendirileceği.
 - AI'ın sistemle nasıl iletişim kuracağı ve hangi yetkilere sahip olacağı.

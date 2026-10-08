@@ -1,6 +1,6 @@
 # İşletim sistemi örnekleri ve ZulOS fikir havuzu
 
-Tarih: 7 Ekim 2026
+İlk kayıt: 7 Ekim 2026. Son güncelleme: 8 Ekim 2026.
 
 Bu belge, başlangıç görüşmelerinde ele aldığımız örnekleri ve önerileri toplar. Teknik özellikler bağlantı verilen resmi kaynaklara dayanır. ZulOS'a çıkarılan dersler ve özellik fikirleri tasarım yorumlarıdır.
 
@@ -82,14 +82,17 @@ Bu yaklaşım her işte onay istemek olarak kararlaştırılmadı. İnisiyatif d
 
 Önce ölçüm altyapısının kurulması, daha sonra AI açıklamalarının eklenmesi önerildi.
 
-## Teknik tasarım önerileri
+## Teknik tasarımın güncel durumu
 
-- AI'ın kullanıcı alanında ayrı bir hizmet olarak çalışması.
+8 Ekim 2026 tarihinde mikroçekirdek mimarisi seçildi. Küçük bir çekirdek ve kullanıcı alanında ayrı sistem hizmetleri hedefliyoruz. Kişisel asistanın kullanıcı alanında çalışması bu yönün bir parçası; hizmetin ayrıntılı tasarımı açık.
+
+Aşağıdaki konular hâlâ öneri ve değerlendirme aşamasında:
+
 - AI'ın sistem hizmetlerine tanımlı arayüzlerle ve sınırlı yetkilerle erişmesi.
 - Temel sistemin AI kapalıyken de açılıp çalışabilmesi.
 - İlk çekirdekten itibaren geliştirmeyi destekleyen olay kayıtları ve ölçümler tutulması.
 
-Bunlar henüz onaylanmış mimari kararlar değil. Olay kayıtları geliştirme ve doğrulama için düşünülebilir; "çalışmasını anlatan sistem" ürünün ana yönü olarak benimsenmedi.
+Bu ayrıntılar henüz onaylanmış kararlar değil. Olay kayıtları geliştirme ve doğrulama için düşünülebilir; "çalışmasını anlatan sistem" ürünün ana yönü olarak benimsenmedi.
 
 ## Onaylanan başlangıç ortamı
 
