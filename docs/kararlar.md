@@ -1,6 +1,6 @@
 # ZulOS karar günlüğü
 
-Tarih: 7 Ekim 2026
+Başlangıç görüşmeleri: 7 Ekim 2026. Son güncelleme: 8 Ekim 2026.
 
 Bu belge, başlangıç görüşmelerinde kesinleşen kararları ve açık kalan konuları kaydeder. Bir önerinin burada açık konu olarak bulunması, uygulanmasına karar verildiği anlamına gelmez.
 
@@ -17,6 +17,7 @@ Bu belge, başlangıç görüşmelerinde kesinleşen kararları ve açık kalan 
 | İlk geliştirme ve çalıştırma ortamı | QEMU | İlk çekirdeği emüle edilen bir bilgisayarda çalıştıracağız. |
 | Çekirdeğin ilk deneme dili | Rust | İlk denemeyi Rust ile yapacağız; geliştirme deneyimimize göre seçimi yeniden değerlendirebiliriz. |
 | İlk önyükleyici | Limine | Hazır önyükleyiciyle Rust çekirdeğini başlatacağız; Limine'ın nasıl çalıştığını da öğreneceğiz. |
+| İlk firmware türü | UEFI | 8 Ekim 2026 tarihinde ilk açılışın UEFI üzerinden yapılması onaylandı; QEMU'daki UEFI ortamını OVMF sağlayacak. |
 | İlk somut hedef | Açılan ve ekrana çıktı verebilen çekirdek | Kişisel asistan deneyiminin üzerine kurulacağı küçük bir temel oluşturacağız. |
 | Depo görünürlüğü | Public | Geliştirme ve öğrenme süreci GitHub'da herkese açık. |
 
@@ -34,7 +35,7 @@ Bir bilgisayarı ve x86_64 + QEMU ortamını başlangıç hedefi olarak seçmek,
 
 - Rust sürümü, derleme araçları ve geliştirme ortamının kurulumu.
 - İlk Rust denemesinden sonra dil seçiminin değerlendirilmesi.
-- İlk firmware türü (UEFI/BIOS), Limine sürümü ve protokol revizyonu.
+- Limine sürümü, protokol revizyonu ve kullanılacak OVMF paketi/sürümü.
 - Açılış, kurtarma ve güncelleme deneyimine hangi ZulOS özelliklerinin ekleneceği.
 - Çekirdek mimarisi ve sistem hizmetlerinin sınırları.
 - Fiziksel bilgisayarlarda ilk desteklenecek donanım ve sürücüler.

@@ -1,6 +1,6 @@
 # Bootloader ve Limine nasıl çalışır?
 
-Tarih: 7 Ekim 2026
+İlk kayıt: 7 Ekim 2026. Son güncelleme: 8 Ekim 2026.
 
 ZulOS'un ilk önyükleyicisi Limine olarak seçildi. Bu belge öğrenme notları ve tasarım önerileri içerir; henüz çalışan bir açılış uygulaması yok. Limine sürümü ve protokol revizyonu henüz seçilmedi.
 
@@ -10,11 +10,13 @@ Bootloader (önyükleyici), işletim sistemi çekirdeğini belleğe yükleyip ç
 
 ## Açılış zinciri
 
-Aşağıdaki şema UEFI ile normal açılışın sadeleştirilmiş bir örneğidir. İlk ZulOS denemesinin firmware türü ayrıca seçilecek.
+İlk ZulOS denemesinde UEFI kullanılması onaylandı. QEMU'daki UEFI ortamını OVMF sağlayacak. OVMF, QEMU için UEFI firmware sunar. [TianoCore OVMF belgeleri](https://www.tianocore.org/tianocore-wiki.github.io/platforms-packages/platform-ports/ovmf.html)
+
+Aşağıdaki şema hedeflediğimiz açılış akışıdır; henüz uygulanmadı.
 
 ```mermaid
 flowchart TD
-    A[Bilgisayar açılır] --> B[Firmware: UEFI]
+    A[QEMU sanal bilgisayarı açılır] --> B[Firmware: OVMF / UEFI]
     B --> C[Limine: çekirdeği yükler]
     C --> D[ZulOS Rust çekirdeği]
     D --> E[Sistem hizmetleri]
